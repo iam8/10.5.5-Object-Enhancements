@@ -53,3 +53,11 @@ const instructor1 = {
 
 
 // createAnimal function
+// Object enhancements used: same key-value name, computed property name, object method shorthand
+function createAnimal(species, verb, noise) {
+
+    return {
+        species,
+        [verb]() {console.log(noise)},
+    }
+}
