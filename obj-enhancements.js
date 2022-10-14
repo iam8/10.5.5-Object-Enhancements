@@ -2,6 +2,7 @@
 // 10/14/22
 // Exercise 10.5.5: Object Enhancements
 
+
 // Same keys and values: ES5 version
 function es5CreateInstructor(firstName, lastName) {
     return {
@@ -13,20 +14,27 @@ function es5CreateInstructor(firstName, lastName) {
 // Same keys and values: ES2015 (refactored) version
 const createInstructor = (firstName, lastName) => ({firstName, lastName});
 
-// Computed property names: ES5 version
-var favoriteNumber = 42;
 
-var instructor = {
+// Computed property names: ES5 version
+var es5FavoriteNumber = 42;
+
+var es5Instructor = {
     firstName: "Colt"
 };
 
-instructor[favoriteNumber] = "That is my favorite!";
+es5Instructor[es5FavoriteNumber] = "That is my favorite!";
 
 // Computed property names: ES2015 (refactored) version
+const favoriteNumber = 42;
+
+const instructor0 = {
+    firstName: "Colt",
+    [favoriteNumber]: "That is my favorite!"
+}
 
 
 // Object methods: ES5 version
-var instructor = {
+var es5Instructor = {
     firstName: "Colt",
     sayHi: function(){
         return "Hi!";
@@ -36,8 +44,12 @@ var instructor = {
     }
 }
 
-
 // Object methods: ES2015 (refactored) version
+const instructor1 = {
+    firstName: "Colt",
+    sayHi() {return "Hi!"},
+    sayBye() {return this.firstName + " says bye!"}
+}
 
 
 // createAnimal function
